@@ -11,9 +11,15 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -129,12 +135,22 @@ class MainActivity : ComponentActivity() {
                         topBar = {
                             TopAppBar(
                                 title = {
-                                    Text(
-                                        text = "PhishShield Protection",
-                                        fontFamily = androidx.compose.ui.text.font.FontFamily.Default,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color.White
-                                    )
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Image(
+                                            painter = painterResource(id = R.drawable.app_icon),
+                                            contentDescription = "App Logo",
+                                            modifier = Modifier
+                                                .size(32.dp)
+                                                .clip(RoundedCornerShape(8.dp))
+                                                .border(1.dp, Color(0xFF8B5CF6).copy(alpha = 0.5f), RoundedCornerShape(8.dp))
+                                        )
+                                        Spacer(modifier = Modifier.width(10.dp))
+                                        Text(
+                                            text = "PhishShield Protection",
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color.White
+                                        )
+                                    }
                                 },
                                 colors = TopAppBarDefaults.topAppBarColors(
                                     containerColor = Color(0xFF0B0C10)
@@ -266,25 +282,15 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.Center
             ) {
-                // Header Gradient Icon
-                Box(
+                // Header Image
+                Image(
+                    painter = painterResource(id = R.drawable.app_icon),
+                    contentDescription = "PhishShield Logo",
                     modifier = Modifier
-                        .size(80.dp)
-                        .clip(RoundedCornerShape(20.dp))
-                        .background(
-                            Brush.linearGradient(
-                                colors = listOf(Color(0xFF8B5CF6), Color(0xFFEC4899))
-                            )
-                        ),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        Icons.Default.Warning,
-                        contentDescription = "Shield Logo",
-                        tint = Color.White,
-                        modifier = Modifier.size(44.dp)
-                    )
-                }
+                        .size(90.dp)
+                        .clip(RoundedCornerShape(22.dp))
+                        .border(1.5.dp, Color(0xFF8B5CF6).copy(alpha = 0.5f), RoundedCornerShape(22.dp))
+                )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
@@ -512,9 +518,9 @@ class MainActivity : ComponentActivity() {
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                // Text
+                // Text with trigger word highlighting
                 Text(
-                    text = log.text,
+                    text = formatAnnotatedScamText(log.text, log.triggeringTerms),
                     fontSize = 13.sp,
                     color = Color.LightGray,
                     lineHeight = 18.sp
@@ -656,5 +662,75 @@ class MainActivity : ComponentActivity() {
         val date = Date(timestamp)
         val format = SimpleDateFormat("dd MMM, hh:mm a", Locale.getDefault())
         return format.format(date)
+    }
+}
+
+/**
+ * Formats a message string to highlight triggering words in bold neon red.
+ */
+fun formatAnnotatedScamText(text: String, triggeringTerms: String): AnnotatedString {
+    if (triggeringTerms.isEmpty()) {
+        return AnnotatedString(text)
+    }
+
+    // Split terms, clean quotes/brackets, filter out indicator tags like [Link/URL Detected]
+    val terms = triggeringTerms.split(",")
+        .map { it.replace("'", "").replace("[", "").replace("]", "").trim() }
+        .filter { it.isNotEmpty() && !it.startsWith("has_") && !it.contains("Detected") && !it.contains("Sender") && !it.contains("Shortcode") && !it.contains("Body") && !it.contains("Words") }
+
+    if (terms.isEmpty()) {
+        return AnnotatedString(text)
+    }
+
+    return buildAnnotatedString {
+        var cursor = 0
+        val lowerText = text.lowercase()
+
+        // Find all occurrences of each term in the text
+        val matches = mutableListOf<Pair<Int, Int>>()
+        for (term in terms) {
+            val lowerTerm = term.lowercase()
+            var index = lowerText.indexOf(lowerTerm)
+            while (index != -1) {
+                matches.add(Pair(index, index + term.length))
+                index = lowerText.indexOf(lowerTerm, index + 1)
+            }
+        }
+
+        // Sort matches by start index, merge overlaps
+        val sortedMatches = matches.sortedBy { it.first }
+        val mergedMatches = mutableListOf<Pair<Int, Int>>()
+        
+        for (match in sortedMatches) {
+            if (mergedMatches.isEmpty()) {
+                mergedMatches.add(match)
+            } else {
+                val last = mergedMatches.last()
+                if (match.first < last.second) {
+                    // Overlap
+                    mergedMatches[mergedMatches.size - 1] = Pair(last.first, maxOf(last.second, match.second))
+                } else {
+                    mergedMatches.add(match)
+                }
+            }
+        }
+
+        // Build the annotated string
+        for (match in mergedMatches) {
+            if (match.first > cursor) {
+                append(text.substring(cursor, match.first))
+            }
+            withStyle(style = SpanStyle(
+                color = Color(0xFFEF4444), // Neon Red
+                fontWeight = FontWeight.Bold
+            )) {
+                append(text.substring(match.first, match.second))
+            }
+            cursor = match.second
+        }
+        
+        if (cursor < text.length) {
+            append(text.substring(cursor))
+        }
     }
 }
