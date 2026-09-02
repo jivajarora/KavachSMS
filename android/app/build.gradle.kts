@@ -9,7 +9,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.phishshield.detector"
+        applicationId = "com.kavachsms.detector"
         minSdk = 26
         targetSdk = 34
         versionCode = 2

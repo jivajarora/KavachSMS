@@ -1,7 +1,7 @@
 {
   "baseline": {
     "model_type": "logistic_regression (optimized)",
-    "decision_threshold": 0.2,
+    "decision_threshold": 0.5,
     "scam_precision": 1.0,
     "scam_recall": 1.0,
     "scam_f1": 1.0,
