@@ -73,13 +73,13 @@ class MainActivity : ComponentActivity() {
         database = ScamDatabase.getDatabase(this)
 
         setContent {
-            PhishShieldApp()
+            KavachSMSApp()
         }
     }
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun PhishShieldApp() {
+    fun KavachSMSApp() {
         // App states
         var isProtectionEnabled by remember {
             mutableStateOf(sharedPrefs.getBoolean("sms_protection_enabled", true))
@@ -146,7 +146,7 @@ class MainActivity : ComponentActivity() {
                                         )
                                         Spacer(modifier = Modifier.width(10.dp))
                                         Text(
-                                            text = "PhishShield Protection",
+                                            text = "KavachSMS Protection",
                                             fontWeight = FontWeight.Bold,
                                             color = Color.White
                                         )
@@ -285,7 +285,7 @@ class MainActivity : ComponentActivity() {
                 // Header Image
                 Image(
                     painter = painterResource(id = R.drawable.app_icon),
-                    contentDescription = "PhishShield Logo",
+                    contentDescription = "KavachSMS Logo",
                     modifier = Modifier
                         .size(90.dp)
                         .clip(RoundedCornerShape(22.dp))
@@ -295,7 +295,7 @@ class MainActivity : ComponentActivity() {
                 Spacer(modifier = Modifier.height(24.dp))
 
                 Text(
-                    text = "PhishShield Protection",
+                    text = "KavachSMS Protection",
                     fontSize = 28.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
@@ -303,9 +303,9 @@ class MainActivity : ComponentActivity() {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Privacy-First SMS Phishing Detection",
+                    text = "AI-Powered Regional Anti-Fraud Armor",
                     fontSize = 14.sp,
-                    color = Color(0xFFEC4899),
+                    color = Color(0xFF06B6D4),
                     fontWeight = FontWeight.SemiBold
                 )
 

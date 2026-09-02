@@ -89,10 +89,10 @@ class SmsReceiver : BroadcastReceiver() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 channelId,
-                "SMS Scam Warnings",
+                "KavachSMS Scam Warnings",
                 NotificationManager.IMPORTANCE_HIGH
             ).apply {
-                description = "Alert notifications for detected financial fraud or phishing SMS."
+                description = "KavachSMS real-time protection alerts for detected SMS scams."
                 enableVibration(true)
             }
             notificationManager.createNotificationChannel(channel)
@@ -117,7 +117,7 @@ class SmsReceiver : BroadcastReceiver() {
         val confidencePercentage = (confidence * 100).toInt()
         val notification = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(android.R.drawable.stat_sys_warning) // Default system warning icon
-            .setContentTitle("🚨 Possible Scam SMS Detected")
+            .setContentTitle("🚨 KavachSMS: Scam Alert Detected")
             .setContentText("From $sender ($confidencePercentage% Scam Likelihood). Tap to review.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)

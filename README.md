@@ -1,6 +1,6 @@
-# Regional-Language SMS Phishing/Scam Detector
+# KavachSMS: AI-Powered Regional-Language SMS Scam & Phishing Defense
 
-This project is a defensive consumer-protection tool designed to detect phishing and financial fraud SMS or WhatsApp messages written in **Hindi, Hinglish (Roman-script Hindi), and English**.
+**KavachSMS** (कवच - *Armor*) is an AI-powered defensive consumer-protection tool designed to detect phishing and financial fraud SMS or WhatsApp messages written in **Hindi, Hinglish (Roman-script Hindi), and English**.
 
 It provides two core pipelines for comparison:
 1. **Phase 1 Baseline**: A fast TF-IDF character/word n-gram pipeline feeding a Logistic Regression classifier, optimized for recall with engineered auxiliary features (short URLs, urgency counts, OTP/PIN/CVV requests, sender type).

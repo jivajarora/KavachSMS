@@ -24,6 +24,24 @@
     "sender": "+919999888877"
   },
   {
+    "text": "Dear consumer, your electricity power will be disconnected tonight at 9:30 PM due to unpaid bill. Immediately contact electricity officer at {phone}.",
+    "label": "scam",
+    "language": "english",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "SpeedPost: Your parcel has arrived at the delivery hub but cannot be delivered due to incomplete address. Please update address at {link} within 24hrs.",
+    "label": "scam",
+    "language": "english",
+    "sender": "AD-POSTIN"
+  },
+  {
+    "text": "Congratulations! Your instant pre-approved personal loan of {amount} is ready. Click {link} to disburse money into bank account now.",
+    "label": "scam",
+    "language": "english",
+    "sender": "+919123456780"
+  },
+  {
     "text": "प्रिय ग्राहक, आपका {bank} खाता ब्लॉक कर दिया गया है। तुरंत अपना केवाईसी अपडेट करें: {link}।",
     "label": "scam",
     "language": "hindi",
@@ -46,6 +64,24 @@
     "label": "scam",
     "language": "hindi",
     "sender": "9222333444"
+  },
+  {
+    "text": "प्रिय उपभोक्ता, आपके बिजली का बिल न भरने के कारण आज रात 9:30 बजे बिजली काट दी जाएगी। तुरंत बिजली अधिकारी से संपर्क करें: {phone}।",
+    "label": "scam",
+    "language": "hindi",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "स्पीडपोस्ट: आपका पार्सल गलत पते के कारण डिलीवरी हब पर रोक दिया गया है। पार्सल प्राप्त करने के लिए अभी पता सही करें: {link}।",
+    "label": "scam",
+    "language": "hindi",
+    "sender": "+919988776655"
+  },
+  {
+    "text": "बधाई हो! आपके लिए {amount} रुपये का तुरंत लोन स्वीकृत हो गया है। सीधे बैंक खाते में राशि प्राप्त करने के लिए लिंक खोलें: {link}।",
+    "label": "scam",
+    "language": "hindi",
+    "sender": "AD-LOANIN"
   },
   {
     "text": "Dear customer, aapka {bank} account suspend ho gaya hai. KYC update karein turant link par click karein: {link}",
@@ -72,6 +108,24 @@
     "sender": "+918888777766"
   },
   {
+    "text": "Dear consumer, aaj raat 9:30 baje aapki bijli kaat di jayegi kyunki bill update nahi hai. Turant electricity officer ko call karein: {phone}",
+    "label": "scam",
+    "language": "hinglish",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "SpeedPost: Aapka parcel terminal par hold hai incomplete address ki wajah se. Address update karein 24 ghante me: {link}",
+    "label": "scam",
+    "language": "hinglish",
+    "sender": "+919988776655"
+  },
+  {
+    "text": "Mubarak ho! Aapka instant loan {amount} approve ho gaya hai. Abhi claim karne ke liye link open karein: {link}",
+    "label": "scam",
+    "language": "hinglish",
+    "sender": "AD-KREDIT"
+  },
+  {
     "text": "Your OTP for login to {bank} is {otp}. Valid for 10 minutes. Do not share this OTP with anyone.",
     "label": "legit",
     "language": "english",
@@ -94,6 +148,66 @@
     "label": "legit",
     "language": "english",
     "sender": "AD-JIOFBR"
+  },
+  {
+    "text": "Hey, are you free to catch up this weekend? Let me know.",
+    "label": "legit",
+    "language": "english",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "Happy birthday bro! Wishing you a fantastic year ahead with great health and success.",
+    "label": "legit",
+    "language": "english",
+    "sender": "+919123456789"
+  },
+  {
+    "text": "Running 10 minutes late for the meeting, please start without me.",
+    "label": "legit",
+    "language": "english",
+    "sender": "9988776655"
+  },
+  {
+    "text": "I have reached home safely. Will talk to you tomorrow morning.",
+    "label": "legit",
+    "language": "english",
+    "sender": "9876501234"
+  },
+  {
+    "text": "Can you please share the class notes and lecture slides with me?",
+    "label": "legit",
+    "language": "english",
+    "sender": "+919822334455"
+  },
+  {
+    "text": "Please bring some bread and milk while coming back from office.",
+    "label": "legit",
+    "language": "english",
+    "sender": "9811223344"
+  },
+  {
+    "text": "Thanks a lot for the help today! Really appreciate your support.",
+    "label": "legit",
+    "language": "english",
+    "sender": "+919010203040"
+  },
+  {
+    "text": "Call me back whenever you get free, it is important.",
+    "label": "legit",
+    "language": "english",
+    "sender": "9765432109"
+  },
+  {
+    "text": "Sir, your courier delivery executive is outside your gate. Please share OTP {otp} to collect parcel.",
+    "label": "legit",
+    "language": "english",
+    "sender": "+919871122334"
+  },
+  {
+    "text": "Your Uber ride is arriving in a white Dzire. Please reach the pickup location.",
+    "label": "legit",
+    "language": "english",
+    "sender": "VK-UBERIN"
   },
   {
     "text": "लॉगिन के लिए आपका ओटीपी {otp} है। यह 10 मिनट के लिए मान्य है। इसे किसी के साथ साझा न करें।",
@@ -120,6 +234,66 @@
     "sender": "AD-ICICIB"
   },
   {
+    "text": "नमस्ते, आप कैसे हैं? आशा है कि घर पर सब कुशल मंगल हैं।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "जन्मदिन की ढेर सारी शुभकामनाएं भाई! भगवान आपको हमेशा खुश और स्वस्थ रखे।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "+919123456789"
+  },
+  {
+    "text": "मैं घर पहुंच गया हूं, थोड़ी देर में आराम करके फोन करता हूं।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "9988776655"
+  },
+  {
+    "text": "क्या हम आज शाम को 6 बजे पार्क में मिल सकते हैं?",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "9876501234"
+  },
+  {
+    "text": "कल कॉलेज में मिलेंगे, कृपया अपनी असाइनमेंट की कॉपी साथ लेते आना।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "+919822334455"
+  },
+  {
+    "text": "बाजार से आते समय हरी सब्जियां और दूध लेते आना।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "9811223344"
+  },
+  {
+    "text": "मदद के लिए बहुत-बहुत धन्यवाद! आपका काम समय पर पूरा हो गया है।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "+919010203040"
+  },
+  {
+    "text": "जब भी समय मिले मुझे कॉल करना, जरूरी बात करनी है।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "9765432109"
+  },
+  {
+    "text": "सर, आपका डिलीवरी एजेंट घर के बाहर खड़ा है। पार्सल लेने के लिए कृपया ओटीपी {otp} दें।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "+919871122334"
+  },
+  {
+    "text": "आपकी कैब पिकअप लोकेशन पर पहुंच चुकी है। कृपया 5 मिनट में नीचे आएं।",
+    "label": "legit",
+    "language": "hindi",
+    "sender": "VK-OLACAB"
+  },
+  {
     "text": "{bank} par transaction ke liye aapka OTP {otp} hai. Kripya ise kisi se share na karein.",
     "label": "legit",
     "language": "hinglish",
@@ -142,5 +316,65 @@
     "label": "legit",
     "language": "hinglish",
     "sender": "VK-HDFCBK"
+  },
+  {
+    "text": "Haan bhai kahan hai tu? Kab tak pahuchega office?",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "+919876543210"
+  },
+  {
+    "text": "Happy birthday yaar! Party kab de raha hai sabko?",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "+919123456789"
+  },
+  {
+    "text": "Kal subah 11 baje milte hain discussion ke liye cafe me.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "9988776655"
+  },
+  {
+    "text": "Ghar pahunch gaya hu bhai, thoda fresh hoke call karta hu.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "9876501234"
+  },
+  {
+    "text": "Bhai project ke notes bhej de please WhatsApp pe urgent hai.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "+919822334455"
+  },
+  {
+    "text": "Aate waqt thoda dahi aur bread le aana grocery shop se.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "9811223344"
+  },
+  {
+    "text": "Thanks yaar kal ke liye, tumhari wajah se kaam time par ho gaya.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "+919010203040"
+  },
+  {
+    "text": "Free hoke call kar mujhe, zaroori baat karni hai.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "9765432109"
+  },
+  {
+    "text": "Bhaiya mai Amazon se delivery boy hu gate par khada hu parcel OTP {otp} bata do.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "+919871122334"
+  },
+  {
+    "text": "Sir cab aa gayi hai aapke pickup location par, jaldi aa jaiye.",
+    "label": "legit",
+    "language": "hinglish",
+    "sender": "VK-UBERIN"
   }
 ]

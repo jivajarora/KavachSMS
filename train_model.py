@@ -162,15 +162,14 @@ def main():
         prec = th_report["scam"]["precision"]
         f1 = th_report["scam"]["f1-score"]
         
-        # We prioritize high recall. Let's aim for a balance, but favor recall.
-        # Rule: Choose the threshold that maximizes recall, using F1 as a tie-breaker, provided precision is > 0.60
-        if rec >= best_recall_score and prec >= 0.50:
-            if rec > best_recall_score or f1 > best_f1_score:
-                best_recall_score = rec
-                best_f1_score = f1
-                best_threshold = float(th)
-                best_report_opt = th_report
-                best_cm_opt = th_cm
+        # Optimize for highest Scam F1-score.
+        # If F1-scores are tied, select the threshold closest to 0.50 to avoid over-flagging benign messages.
+        if f1 > best_f1_score or (abs(f1 - best_f1_score) < 1e-4 and abs(th - 0.5) < abs(best_threshold - 0.5)):
+            best_recall_score = rec
+            best_f1_score = f1
+            best_threshold = float(th)
+            best_report_opt = th_report
+            best_cm_opt = th_cm
                 
     logger.info(f"Selected optimized Logistic Regression threshold: {best_threshold:.2f}")
     logger.info(f"Optimized LR Scam Recall: {best_report_opt['scam']['recall']:.4f} | Precision: {best_report_opt['scam']['precision']:.4f}")

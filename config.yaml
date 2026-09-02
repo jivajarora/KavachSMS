@@ -33,6 +33,8 @@ keywords:
       - "expired"
       - "last chance"
       - "penalty"
+      - "disconnected"
+      - "disconnect"
     hindi:
       - "तुरंत"
       - "जल्दी"
@@ -42,6 +44,7 @@ keywords:
       - "आवश्यक"
       - "अंतिम सूचना"
       - "जुर्माना"
+      - "काट दी जाएगी"
     hinglish:
       - "turant"
       - "jaldi"
@@ -52,6 +55,7 @@ keywords:
       - "immediately"
       - "24 ghante"
       - "jaldi kare"
+      - "kaat di jayegi"
 
   # Keywords requesting sensitive information
   credentials:
