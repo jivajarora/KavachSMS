@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "PhishShield"
+rootProject.name = "KavachSMS"
 include(":app")

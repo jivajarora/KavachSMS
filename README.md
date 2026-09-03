@@ -32,7 +32,7 @@ For detailed explanations of the engineering process, dataset curation, privacy 
 
 ## Directory Structure
 ```
-regional-language-phishing-detector/
+KavachSMS/
 ├── config.yaml                   # Configurable keywords, file paths, and hyperparameters
 ├── requirements.txt              # Pinned dependency versions
 ├── build_dataset.py              # Data augmentation and dataset assembly script
@@ -144,7 +144,7 @@ Because Google restricts incoming SMS broadcast permissions (`RECEIVE_SMS`) on G
    *(Alternatively, run `./gradlew installDebug` from the `android/` directory).*
 
 ### Running & Permission Checklist:
-- Launch the **PhishShield** app.
+- Launch the **KavachSMS** app.
 - You will be presented with the **Consent screen** detailing the privacy guarantee (that no data leaves the device).
 - Click **Enable SMS Protection** and grant the requested SMS broadcast (`RECEIVE_SMS`) and log-read (`READ_SMS`) runtime permissions.
 - In settings, you can toggle protection on/off or click **Disable App Receiver** to suspend background monitoring immediately.
